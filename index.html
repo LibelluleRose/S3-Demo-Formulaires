@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            defer></script>
+    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+
     <meta charset="UTF-8">
     <title>Formulaire</title>
-  <script src="script.js"></script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Formulaire d'inscription</h1>
-  <form method="post" action="connecte.html">
-    <label>Nom <input name="nom" type="text" required/></label><br/>
-    <label>Prénom <input name="prenom" type="text" required/></label><br/>
-    <label>Courriel <input name="courriel" type="email" required/></label><br/>
-    <label>Téléphone <input name="tel" type="tel" required /></label><br/>
-    <label>Mot de passe <input name="mdp1" type="password" required/></label><br/>
-    <label>Mot de passe <input name="mdp2" type="password" required/></label><br/>
+<h1>Formulaire d'inscription</h1>
+<form method="post" action="connecte.html" class="container">
+    <label class="row"><p class="col-2">Nom</p><input class="col-5" name="nom" type="text" required/></label><br/>
+    <label class="row"><p class="col-2">Prénom</p><input class="col-5" name="prenom" type="text" required/></label><br/>
+    <label class="row"><p class="col-2">Courriel</p><input class="col-5" name="courriel" type="email" required/></label><br/>
+    <label class="row"><p class="col-2">Téléphone</p><input class="col-5" name="tel" type="tel" required/></label><br/>
+
+    <label class="row">
+        <p class="col-1">Sexe : </p>
+        <p class="col-1">Femme</p><input class="col-1" type="radio" value="Femme">
+        <p class="col-1">Homme</p><input class="col-1" type="radio" value="Homme">
+    </label><br/>
+
+    <label class="row"><p class="col-2">Mot de passe</p><input class="col-5" name="mdp1" type="password"
+                                                               required/></label><br/>
+    <label class="row"><p class="col-2">Mot de passe</p><input class="col-5" name="mdp2" type="password"
+                                                               required/></label><br/>
+
+    <label for="pub" class="row">
+        <input class="col-5" type="checkbox" name="pub" id="pub">
+        <p class="col-8">Je veux recevoir de la publicité</p>
+    </label>
+
+
     <!-- submit exécute l'action du form sauf si la fonction dans onclick retourne false -->
-    <input type="submit" value="Connexion" onclick="return valider()" />
-    <input type="reset" value="Effacer">
-    <input type="button" value="Popup" onclick="alert('allo')">
-  </form>
+    <div class="row">
+        <input class="col-2" type="submit" value="Connexion" onclick="return valider()"/>
+        <input class="col-2" type="reset" value="Effacer">
+        <input class="col-2" type="button" value="Popup" onclick="alert('allo')"></div>
+
+
+</form>
 </body>
 </html>
